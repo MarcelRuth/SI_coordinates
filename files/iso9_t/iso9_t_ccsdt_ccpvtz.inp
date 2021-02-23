@@ -1,0 +1,27 @@
+title
+C  
+N 1 R12*          
+H 1 R13* 2 A213*         
+H 1 R14* 2 A214* 3 D3214*        
+O 2 R25* 1 A125* 3 D3125*        
+H 5 R56* 2 A256* 1 D1256*        
+
+R12           =        1.26421646
+R13           =        1.08689766
+A213          =        122.95327703
+R14           =        1.08094451
+A214          =        116.62629149
+D3214         =        180.00000000
+R25           =        1.39850541
+A125          =        111.74549108
+D3125         =        0.00000000
+R56           =        0.96194231
+A256          =        103.14489232
+D1256         =        180.00000000
+
+*CFOUR(CALC=CCSD(T),BASIS=cc-pVTZ,FROZEN_CORE=1
+       CONVERGENCE=8
+       MEMORY_SIZE=5000,MEM_UNIT=MB,ABCDTYPE=AOBASIS,CC_PROG=ECC
+       MULTIPLICITY=1,CHARGE=0
+       SCF_CONV=8,CC_CONV=10)
+

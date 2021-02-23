@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+import math
 import sys
 import os #operating system
 import re
@@ -52,6 +53,13 @@ while len(q) > 0:
             cfour_freq = re.findall("VIB=", input_text)
             img_freq_cfours = re.findall(r"Rotationally projected vibrational frequencies(.*?)i", input_text, flags=re.DOTALL)
             cfour_freq_geometry = re.findall(r"Coordinates used in calculation(.*?)Interatomic", input_text, flags=re.DOTALL)
+            point_group_gaussian = re.findall(r"Full point group(.*?)NOp", input_text, flags=re.DOTALL)
+            point_group_cfour = re.findall(r"Computational point group:(.*?)Initial", input_text, flags=re.DOTALL)
+
+            if len(point_group_cfour) != 0:
+                last_point_group_cfour = point_group_cfour[-1].replace("Computational point group:", "").replace("Initial", "").replace(" ", "").replace("1", u"\u2081").replace("2", u"\u2082").replace("3", u"\u2083").replace("V", u"\u1D65").replace("H", u"\u2095").replace("S", u"\u209B").replace("*", u"\u221e")
+                last_point_group_cfour = last_point_group_cfour.replace("v", u"\u1D65").replace("h", u"\u2095").replace("s", u"\u209B").replace("*", u"\u221e")
+
             if len(is_ts_output) != 0:
                 imaginary_frequencies_gaussians = re.findall(r"Frequencies -- *-[0-9]*[.]?[0-9]*", input_text)
 
@@ -78,7 +86,8 @@ while len(q) > 0:
                 img_freq_cfour_crude = "\n".join(img_freq_cfours[-1].split("\n")[1:])
                 img_freq_cfour_crude = img_freq_cfour_crude.strip()
                 img_freq_cfour = img_freq_cfour_crude[2:].strip()
-            #insert what to search
+            if len(point_group_gaussian) != 0:
+                last_point_group_gaussian = point_group_gaussian[-1].replace("point group", "").replace("NOp", "").replace(" ", "").replace("1", u"\u2081").replace("2", u"\u2082").replace("3", u"\u2083").replace("V", u"\u1D65").replace("H", u"\u2095").replace("S", u"\u209B").replace("*", u"\u221e")
             if len(gaussian) != 0:
                 full_geometry_blog = re.findall(r"Standard orientation:(.*?)Rotational", input_text, flags=re.DOTALL)
                 if len(full_geometry_blog) != 0:
@@ -91,7 +100,7 @@ while len(q) > 0:
                         geometry_cleaner.append(line_string)
                         line_string = ""
                     geometry_cleanest = "\n".join(geometry_cleaner)
-                    print(filename.replace(remove_this, ""))
+                    print(filename.replace(remove_this, "") + " (" + str(last_point_group_gaussian) + ")")
                     print("")
                     print(geometry_cleanest)
                     print("")
@@ -206,7 +215,7 @@ while len(q) > 0:
 
                         new_values_cfour_blog_clean = new_values_cfour_blog.replace("-0.0 ", " 0.00000").replace("0.0 ", "0.00000")
 
-                        print(filename.replace(remove_this, ""))
+                        print(filename.replace(remove_this, "") + " (Comp. point group = " + str(last_point_group_cfour.replace("\n", "").replace(" ", "")) + ")")
                         print("")
                         print(new_values_cfour_blog_clean + "\n")
                         print("E = " + f"{float(final_electronic_energy_cfour):.10f}" + " au")

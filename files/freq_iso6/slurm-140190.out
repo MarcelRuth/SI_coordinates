@@ -1,0 +1,39 @@
+MODULE: Adding module /shared/modulefiles-tools/python/anaconda-3.7
+
+# -- diagnostic data --
+
+iso6_ccsdt_ccpvtz.inp
+
+/scratch/agSchreiner/ruthm/140190/cfour_freq_iso6.iso6_ccsdt_ccpvtz
+
+/home/orgChemistry/bin/cfour_v21/bin/xcfour
+
+1
+
+24
+
+/home/orgChemistry/bin/cfour_v21/bin:/home/orgChemistry/init:/home/agSchreiner/quanzh/.local/bin:/home/orgChemistry/init:/home/agSchreiner/quanzh/.local/bin:/shared/apps/python/anaconda-py3.7/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/shared/apps/slurm_wrappers:/shared/apps/slurm/current/bin:/home/agSchreiner/ruthm/scripts:/home/agSchreiner/ruthm/.local/bin:/home/agSchreiner/ruthm/bin:/home/agSchreiner/ruthm/scripts
+
+/shared/apps/intel/2019/compilers_and_libraries_2019.0.117/linux/compiler/lib/intel64_lin:/shared/apps/intel/2019/compilers_and_libraries_2019.0.117/linux/mkl/lib/intel64_lin:/shared/apps/python/anaconda-py3.7/lib:/shared/apps/slurm/current/lib
+
+#-----#
+
+# copied:     file iso6_ccsdt_ccpvtz.inp to folder /scratch/agSchreiner/ruthm/140190/cfour_freq_iso6.iso6_ccsdt_ccpvtz
+# copied:     basis set files to folder /scratch/agSchreiner/ruthm/140190/cfour_freq_iso6.iso6_ccsdt_ccpvtz
+# copied:     iso6_ccsdt_ccpvtz.out to /home/agSchreiner/ruthm/scr/Spezi_Bastian/Aminohydroxycarben_marcel/Computations/isomers/CCSDT/freq/freq_iso6
+# renamed:    file FCMFINAL to iso6_ccsdt_ccpvtz.FCMFINAL
+# added:      file iso6_ccsdt_ccpvtz.FCMFINAL to archive iso6_ccsdt_ccpvtz.tar
+# renamed:    file FCMINT to iso6_ccsdt_ccpvtz.FCMINT
+# added:      file iso6_ccsdt_ccpvtz.FCMINT to archive iso6_ccsdt_ccpvtz.tar
+# renamed:    file JOBARC to iso6_ccsdt_ccpvtz.JOBARC
+# added:      file iso6_ccsdt_ccpvtz.JOBARC to archive iso6_ccsdt_ccpvtz.tar
+# renamed:    file JAINDX to iso6_ccsdt_ccpvtz.JAINDX
+# added:      file iso6_ccsdt_ccpvtz.JAINDX to archive iso6_ccsdt_ccpvtz.tar
+# renamed:    file OPTARC to iso6_ccsdt_ccpvtz.OPTARC
+# added:      file iso6_ccsdt_ccpvtz.OPTARC to archive iso6_ccsdt_ccpvtz.tar
+# renamed:    file MOLDEN to iso6_ccsdt_ccpvtz.MOLDEN
+# added:      file iso6_ccsdt_ccpvtz.MOLDEN to archive iso6_ccsdt_ccpvtz.tar
+# renamed:    file DIPDER to iso6_ccsdt_ccpvtz.DIPDER
+# added:      file iso6_ccsdt_ccpvtz.DIPDER to archive iso6_ccsdt_ccpvtz.tar
+# compressed: archive iso6_ccsdt_ccpvtz.tar to iso6_ccsdt_ccpvtz.tar.gz
+# copied:     archive iso6_ccsdt_ccpvtz.tar.gz to folder /home/agSchreiner/ruthm/scr/Spezi_Bastian/Aminohydroxycarben_marcel/Computations/isomers/CCSDT/freq/freq_iso6

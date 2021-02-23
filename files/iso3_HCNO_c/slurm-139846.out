@@ -1,0 +1,37 @@
+MODULE: Adding module /shared/modulefiles-tools/python/anaconda-3.7
+
+# -- diagnostic data --
+
+iso3_HCNO_c_b3lyp_6311_G_3df_3dp.dat
+
+/scratch/agSchreiner/ruthm/139846/gaussian_iso3_HCNO_c.iso3_HCNO_c_b3lyp_6311_G_3df_3dp
+
+/home/orgChemistry/bin/gaussian16-C.01/g16/g16
+
+1
+
+24
+
+/home/orgChemistry/bin/nbo7/nbo7_intel/bin:/home/orgChemistry/bin/nbo6/nbo6_intel/bin:/home/orgChemistry/init:/home/agSchreiner/quanzh/.local/bin:/home/orgChemistry/init:/home/agSchreiner/quanzh/.local/bin:/shared/apps/python/anaconda-py3.7/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/shared/apps/slurm_wrappers:/shared/apps/slurm/current/bin:/home/agSchreiner/ruthm/scripts:/home/agSchreiner/ruthm/.local/bin:/home/agSchreiner/ruthm/bin:/home/agSchreiner/ruthm/scripts:/home/orgChemistry/bin/gaussian16-C.01/gauopen:/home/orgChemistry/bin/gaussian16-C.01/g16/bsd:/home/orgChemistry/bin/gaussian16-C.01/g16
+
+/shared/apps/intel/2019/compilers_and_libraries_2019.0.117/linux/compiler/lib/intel64_lin:/shared/apps/intel/2019/compilers_and_libraries_2019.0.117/linux/mkl/lib/intel64_lin:/home/orgChemistry/bin/gaussian16-C.01/g16/bsd:/home/orgChemistry/bin/gaussian16-C.01/g16:/home/orgChemistry/libs/pgi-18.10_redist:/shared/apps/gcc/8.4.0/lib64:/shared/apps/python/anaconda-py3.7/lib:/shared/apps/slurm/current/lib:/home/orgChemistry/bin/gaussian16-C.01/gv/lib
+
+#-----#
+
+# copied:     file iso3_HCNO_c_b3lyp_6311_G_3df_3dp.dat to folder /scratch/agSchreiner/ruthm/139846/gaussian_iso3_HCNO_c.iso3_HCNO_c_b3lyp_6311_G_3df_3dp
+Error: segmentation violation
+   rax 0000000000000000, rbx ffffffffffffffff, rcx ffffffffffffffff
+   rdx 0000000000008ecc, rsp 00007ffc2b415958, rbp 00007ffc2b415ed0
+   rsi 000000000000000b, rdi 0000000000008ecc, r8  0000000000000020
+   r9  00007ffc2b41553f, r10 00007ffc2b414d60, r11 0000000000000202
+   r12 00007ffc2b415f18, r13 0000000000000000, r14 0000000000000000
+   r15 00000000000003e6
+  /lib64/libpthread.so.0(+0xf5f0) [0x2b6203ab35f0]
+  /lib64/libc.so.6(kill+0x7) [0x2b6203ff8607]
+  /home/orgChemistry/bin/gaussian16-C.01/g16/l9999.exe() [0x406eab]
+  /lib64/libc.so.6(__libc_start_main+0xf5) [0x2b6203fe4505]
+  /home/orgChemistry/bin/gaussian16-C.01/g16/l9999.exe() [0x406daa]
+# copied:     iso3_HCNO_c_b3lyp_6311_G_3df_3dp.out to /home/agSchreiner/ruthm/scr/Spezi_Bastian/Aminohydroxycarben_marcel/Computations/isomers/B3LYP/iso3_HCNO_c
+# added:      file file_name.chk to iso3_HCNO_c_b3lyp_6311_G_3df_3dp.tar
+# compressed: archive iso3_HCNO_c_b3lyp_6311_G_3df_3dp.tar to iso3_HCNO_c_b3lyp_6311_G_3df_3dp.tar.gz
+# copied:     archive iso3_HCNO_c_b3lyp_6311_G_3df_3dp.tar.gz to folder /home/agSchreiner/ruthm/scr/Spezi_Bastian/Aminohydroxycarben_marcel/Computations/isomers/B3LYP/iso3_HCNO_c

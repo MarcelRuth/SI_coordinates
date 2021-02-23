@@ -1,0 +1,19 @@
+title
+C  
+N 1 R12*          
+X 2 R23* 1 A123*         
+H 2 R24* 3 A324* 1 D1324*        
+
+R12           =        1.16427600
+R23           =        0.87057541
+A123          =        90.65839065
+R24           =        0.99735100
+A324          =        89.34160935
+D1324         =        180.00000000
+
+*CFOUR(CALC=CCSD(T),BASIS=cc-pVTZ,FROZEN_CORE=1
+       CONVERGENCE=8
+       MEMORY_SIZE=5000,MEM_UNIT=MB,ABCDTYPE=AOBASIS,CC_PROG=ECC
+       MULTIPLICITY=1,CHARGE=0
+       SCF_CONV=8,CC_CONV=10)
+
