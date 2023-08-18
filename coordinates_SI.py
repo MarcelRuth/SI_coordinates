@@ -8,23 +8,13 @@ import re
 import argparse 
 from distutils.dir_util import copy_tree
 import subprocess
-#if u need arguments from user
-#from argpase import ArgumentParser (direct ArgumentParser importieren)
-#import module
 
-parser = argparse.ArgumentParser() #parser is a variable, argpaser from module 
-parser.add_argument('input_dir') #first argument from user folder
+parser = argparse.ArgumentParser()
+parser.add_argument('input_dir')
 parser.add_argument("remove_this")
-
-#parser.add_argument("second_argument") for second argument, if needed
-
 args = parser.parse_args()
-
-#second_dir = args.second_argument for second argument, if needed
 input_dir = args.input_dir
 remove_this = args.remove_this
-
-
 
 orig_stdout = sys.stdout
 f = open('out.txt', 'w')
@@ -32,7 +22,7 @@ sys.stdout = f
 
 current_dir = input_dir
 
-q = [input_dir] #variable q, take list [input_dir]
+q = [input_dir]
 i = 1
 
 while len(q) > 0:
@@ -107,7 +97,7 @@ while len(q) > 0:
                     print("E = " + str(hf) + " au")
                     print("ZPVE = " + str(zero_point) + " au")
                     if len(is_ts_output) != 0:
-                        print(u'\U0001d708' + u"\u1D62" +" = " + str(img_freq_gaussian).replace("-", "") + u"\U0001D456" + " cm" + u"\u207B\u00B9 \n") #unicode rules i guess
+                        print(u'\U0001d708' + u"\u1D62" +" = " + str(img_freq_gaussian).replace("-", "") + u"\U0001D456" + " cm" + u"\u207B\u00B9 \n")
                     else:
                         print("\n")
             if len(cfour) != 0:
@@ -115,28 +105,27 @@ while len(q) > 0:
                     if len(full_geometry_blog_cfour) != 0:
                         last_geometry_blog_cfour = full_geometry_blog_cfour[-1]
                         no_stars_geometry_blog_cfour = last_geometry_blog_cfour.replace("*", "")
-                        geometry_blog_clean_cfour = "\n".join(no_stars_geometry_blog_cfour.split("\n")[3:-1]) #splits the blog in the right size
-                        #print(geometry_blog_clean_cfour)
+                        geometry_blog_clean_cfour = "\n".join(no_stars_geometry_blog_cfour.split("\n")[3:-1])
                         zmat_file = open("Zmat_file.zmat", "w")
                         zmat_file.write(geometry_blog_clean_cfour)
                         zmat_file.close()
-                        result_cartesian_cfour = subprocess.run(["python3", "gc.py", "-zmat", "Zmat_file.zmat"], capture_output=True, text=True).stdout #make the nice cartesian coordinates
-                        #print(result_cartesian_cfour)
+                        result_cartesian_cfour = subprocess.run(["python3", "gc.py", "-zmat", "Zmat_file.zmat"], capture_output=True, text=True).stdout 
                         result_cartesian_cfour_blog = "\n".join(result_cartesian_cfour.split("\n")[2:])
-                        final_cartesian_cfour = result_cartesian_cfour_blog.replace("C", "6").replace("O", "8").replace("H", "1").replace("S", "16").replace("N", "7") #get numbers for elements
+                        final_cartesian_cfour = result_cartesian_cfour_blog.replace("C", "6").replace("O", "8").replace("H", "1").replace("S", "16").replace("N", "7")
                         splitted_final_cartesian_cfour = final_cartesian_cfour.split("\n")
 
                         cartesian_list_cfour = []
-                        for line in splitted_final_cartesian_cfour: #get rid of dummy atoms
+                        # get rid of dummy atoms
+                        for line in splitted_final_cartesian_cfour: 
                             if line.startswith("X"):
                                 continue
                             if line.startswith("0"):
                                 continue
                             else:
-                                cartesian_list_cfour.append(line)  
-                        final_cartesian_cfour_no_dummy = "\n".join(cartesian_list_cfour) #combine all lines back to one string to print it out
+                                cartesian_list_cfour.append(line)                          
+                        # combine all lines back to one string to print it out
+                        final_cartesian_cfour_no_dummy = "\n".join(cartesian_list_cfour)
 
-                        #now generate the output for the SI
                         print(filename.replace(remove_this, ""))
                         print("")
                         print(final_cartesian_cfour_no_dummy.replace("-0.00000", " 0.00000").replace("\t",""))
@@ -157,7 +146,7 @@ while len(q) > 0:
                                 new_string = _RE_COMBINE_WHITESPACE.sub(" ", line_string).strip()
                                 new_list_cfour_freq_blog_list.append(new_string)
 
-                            Angstrom_translate = 0.529177249 #angstrom in bohr
+                            Angstrom_translate = 0.529177249 # Angstrom in Bohr
 
                             new_values_cfour_list = []
                            
@@ -174,8 +163,7 @@ while len(q) > 0:
                                 new_string_1_2 = ""
                                 new_string_3_4 = ""
                                 row_string_angstrom = ""
-                                for index_value in range(len(row_list)):
-                                    
+                                for index_value in range(len(row_list)):  
                                     if index_value == 0:
                                         new_row_list.append(row_list[index_value])
                                     else:
@@ -186,7 +174,7 @@ while len(q) > 0:
                                         else:
                                             new_row_list.append(format_value)
                                 
-                                if int(new_row_list[0]) > 9 and (float(new_row_list[1]) <= 0 or str(new_row_list[1]) == "0.00000"):        #make sure that we have the nice equal spacing....
+                                if int(new_row_list[0]) > 9 and (float(new_row_list[1]) <= 0 or str(new_row_list[1]) == "0.00000"): 
                                     new_string_1_2 = "  ".join(new_row_list[:2])
                                 elif int(new_row_list[0]) > 9 or float(new_row_list[1]) > 0:
                                     new_string_1_2 = "   ".join(new_row_list[:2])
@@ -201,8 +189,6 @@ while len(q) > 0:
                                     new_string_3_4 = "    ".join(new_row_list[2:])
                                 elif float(new_row_list[3]) < 0:
                                     new_string_3_4 = "   ".join(new_row_list[2:])
-                                
-
 
                                 if float(new_row_list[2]) < 0:
                                     row_string_angstrom = new_string_1_2 + "   " + new_string_3_4
@@ -224,16 +210,11 @@ while len(q) > 0:
                             print(u'\U0001d708' + u"\u1D62" +" = " + f"{float(img_freq_cfour):.10f}" + u"\U0001D456" + " cm" + u"\u207B\u00B9 \n") 
                         else:
                             print("\n")
-                    
-                    
-
                     else:
                         continue
             else:
                 continue
-
         elif os.path.isdir(path):
             q.append(path)
-
 sys.stdout = orig_stdout
 f.close()
