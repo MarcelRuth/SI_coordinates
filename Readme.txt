@@ -12,7 +12,7 @@ method = the method that you want to use e.g. B3LYP
 basis = the basis set that you want to use e.g cc-pVTZ (written as "ccMinuspVTZ"
 usage = opt (optimisation) or anharm (compute anharmonic frequencies)
 
-#abbreviations that have to be used for the method and basis flags
+# Abbreviations that have to be used for the method and basis flags
 
 (Abbrev. = Result)
 
