@@ -1,6 +1,6 @@
-#author: Marcel Ruth
-#Date: 01.29.21
-#This script will find the best structure from gaussian output files (.out) and creates corresponding input files for gaussian16 (for cfour in the future)
+# Author: Marcel Ruth
+# Date: 01.29.21
+# This script will find the best structure from gaussian output files (.out) and creates corresponding input files for gaussian16 (for cfour in the future)
 -----------------------------------------------------------------
 How to use:
 
