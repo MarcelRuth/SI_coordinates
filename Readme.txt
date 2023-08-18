@@ -1,24 +1,9 @@
 # Author: Marcel Ruth
 # Date: 01.29.21
-# This script will find the best structure from gaussian output files (.out) and creates corresponding input files for gaussian16 (for cfour in the future)
+# This script will find the lowest-lying structure (or transition state) from a Gaussian / CFOUR output file and write it into a .txt file
 -----------------------------------------------------------------
 How to use:
 
-Terminal command = python ggeometry.py folder program method basis usage
+python coordinates_SI.py >input_folder<
 
-folder = Folder of the files or main folder with multiple subfolders
-program = g16 (gaussian16 output files)
-method = the method that you want to use e.g. B3LYP
-basis = the basis set that you want to use e.g cc-pVTZ (written as "ccMinuspVTZ"
-usage = opt (optimisation) or anharm (compute anharmonic frequencies)
-
-# Abbreviations that have to be used for the method and basis flags
-
-(Abbrev. = Result)
-
-Kauf = (
-KZu = )
-Minus = -
-Plus = +
-Star = *
-_ = /
+Replace >input_folder< with the path to the folder that contains the computations that you want to use
