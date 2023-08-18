@@ -4,6 +4,7 @@
 -----------------------------------------------------------------
 How to use:
 
-python coordinates_SI.py >input_folder<
+python coordinates_SI.py >input_folder< >removeThis<
 
-Replace >input_folder< with the path to the folder that contains the computations that you want to use
+Replace >input_folder< with the path to the folder that contains the computations that you want to use.
+Replace >removeThis< if you want to remove certain strings from file names (optional)
